@@ -24,7 +24,7 @@ CREATE TABLE bronze.crm_cust_info (
 DROP TABLE IF EXISTS bronze.crm_prd_infro; 
 
 
-CREATE table bronze.crm_prd_infro(
+CREATE table bronze.crm_prd_info(
 	prd_id INT,
 	prd_key NVARCHAR(50),
 	prd_nm NVARchar(50),
