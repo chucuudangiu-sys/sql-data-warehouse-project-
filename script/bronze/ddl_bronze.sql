@@ -21,7 +21,7 @@ CREATE TABLE bronze.crm_cust_info (
     cst_create_date     DATE
 );
 
-DROP TABLE IF EXISTS bronze.crm_prd_infro; 
+DROP TABLE IF EXISTS bronze.crm_prd_info; 
 
 
 CREATE table bronze.crm_prd_info(
