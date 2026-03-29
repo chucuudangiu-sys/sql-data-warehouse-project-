@@ -211,19 +211,20 @@ BEGIN
 	TRUNCATE TABLE silver.erp_loc_a101; 
 	
 	
+	
 	INSERT INTO silver.erp_loc_a101 (cid,cntry)
 	
 	SELECT 
 	
 		REPLACE(cid,'-','') id,
 		
-		CASE WHEN TRIM(cntry) LIKE 'DE%' THEN 'Germany'
-			 WHEN TRIM(cntry) LIKE 'US%' OR TRIM(cntry) LIKE 'USA%' THEN 'United States' 
+		CASE WHEN TRIM(cntry) LIKE 'DE%' or TRIM(cntry) LIKE 'GERMANY%' THEN 'Germany'
+			 WHEN TRIM(cntry) LIKE 'US%' OR TRIM(cntry) LIKE 'USA%' or TRIM(cntry) LIKE 'United States%' THEN 'United States' 
 			 WHEN TRIM(cntry) = '' OR cntry IS NULL THEN 'n/a'
 			 ELSE TRIM(cntry)
 		END as cntry
 		
-	FROM bronze.erp_loc_a101; 
+	FROM bronze.erp_loc_a101;
 	
 	-- next -- 
 	TRUNCATE TABLE silver.erp_px_cat_g1v2; 
